@@ -254,8 +254,7 @@ var reduceEvents = compose(
     first10,
     reverse,
     reduceEvent,
-    reverse,
-    events
+    reverse
 );
 
 function reduceEvent (event, accumulator) {
