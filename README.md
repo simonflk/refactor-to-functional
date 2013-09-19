@@ -142,7 +142,7 @@ In a normal reduce implementation it will be expecting 2 or 3 arguments; the fun
 
 ## Compose
 
-Using compose we can chain together any number of functions to return a result. This is great if you need to perform a number of actions on the same dataset. Let’s take our earlier examples of sqrtAll and sum. If we want to get the total of the sqrt of each item in an array we could write:
+Using compose we can chain together any number of functions to a new function. This is great if you need to perform a number of actions on the same dataset. Let’s take our earlier examples of sqrtAll and sum. If we want to get the total of the sqrt of each item in an array we could write:
 
 ```javascript
 var squareRoots = sqrtAll([9, 64]);
@@ -152,7 +152,7 @@ var total = sum(squareRoots);
 But it is much more concise to use compose:
 
 ```javascript
-var total = compose(sum, sqrtAll, [9, 64]); 
+var total = compose(sum, sqrtAll)([9, 64]); 
 ```
 
 This code reads very nicely, albeit from right to left. With this array, square root each item and sum the result.
@@ -246,18 +246,17 @@ function reduceEvents (events) {
 This code is not complicated but to someone reading it for the first time it is not immediately obvious what is happening until they read the entire function. Using a few functional techniques we can make it more conscise and readable:
 
 ```javascript
-function reduceEvents (events) {
-    var reduceEvent = curry(reduce, reduceEvent);
-    var first10 = curry(slice, 10); 
-    
-    return compose(
-       first10,
-       reverse,
-       reduceEvent,
-       reverse,
-       events
-    );
-}
+
+var reduceEvent = curry(reduce, reduceEvent);
+var first10 = curry(slice, 10); 
+
+var reduceEvents = compose(       
+    first10,
+    reverse,
+    reduceEvent,
+    reverse,
+    events
+);
 
 function reduceEvent (event, accumulator) {
     accumulator[event.type + event.date] = event;
