@@ -276,3 +276,7 @@ return chain(events)
 ```
 
 Speaking of libraries the examples here will work with [fun-js](https://github.com/briansorahan/fun-js) or [scoreunder](https://github.com/loop-recur/scoreunder) (if you add _. to the function calls). [Underscore](http://underscore.org) is a great library but the ordering of parameters makes it [difficult to curry and compose](http://www.youtube.com/watch?v=m3svKOdZijA).
+
+# Contributions 
+
+Thanks go out to [Richard Edwards](https://github.com/apergy), [Perry Harlock](https://github.com/perryharlock), [Andrew Lawson](https://github.com/adlawson) for proof reading and pointing out mistakes.
