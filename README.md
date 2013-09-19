@@ -138,7 +138,7 @@ var sum = curry(reduce, add);
 var total = sum([1, 2, 3]); // 6
 ```
 
-In a normal reduce implementation it will be expecting 2 or 3 arguments; the function, the array and an optionally accumulator (starting point). The function will be recursively called for each item in the array, each time receiving the value and current accumulated result.
+In a normal reduce implementation it will be expecting 2 or 3 arguments; the function, the array and an optional accumulator (starting point). The function will be recursively called for each item in the array, each time receiving the value and current accumulated result.
 
 ## Compose
 
