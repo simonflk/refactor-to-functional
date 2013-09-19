@@ -20,7 +20,9 @@ Similarly functions that have no side effects must not mutate existing variables
 Why does this matter? Pure functions are incredibly easy to test, they take 0 or more inputs and return a value. This means no mocking of dependencies or setting test harness to get the system in the correct state. Just simple input / output.
 
 At the heart of functional programming is a belief that data is just data and the program’s core responsibility is to transform and manipulate that data.
-Map
+
+## Map
+
 Let’s say we have an array of numbers and we want to get the square root of each of them. That’s pretty easy right?
 
 ```javascript
