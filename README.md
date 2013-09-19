@@ -43,7 +43,7 @@ function sqrtAll (values) {
 }
 ```
 
-Not only is the less lines of code, it is “pure” and produces no side effects, but we can still do better.
+Not only is this fewer lines of code, it is “pure” and produces no side effects, but we can still do better.
 
 ##Curry
 
@@ -62,7 +62,7 @@ var add5 = curry(add, 5);
 add5(2); // Gives 7
 ```
 
-On the surface of it this may seem fairly pointless, but it’s actually very powerful. Take our earlier example of sqrtAll, we can now define that as:
+On the surface of it this may seem fairly pointless, but it’s actually very powerful. Take our earlier example of `sqrtAll`, we can now define that as:
 
 ```javascript
 var sqrtAll = curry(map, Math.sqrt);
@@ -125,7 +125,7 @@ The procedural version of this code looks much the same as our join function. Th
 
 ```javascript
 function add (value, accumulator) {
-    return value + result;
+    return value + accumulator;
 }
 
 var total = reduce(add, [1, 2, 3]); // 6
@@ -142,7 +142,7 @@ In a normal reduce implementation it will be expecting 2 or 3 arguments; the fun
 
 ## Compose
 
-Using compose we can chain together any number of functions to a new function. This is great if you need to perform a number of actions on the same dataset. Let’s take our earlier examples of sqrtAll and sum. If we want to get the total of the sqrt of each item in an array we could write:
+Using compose we can chain together any number of functions to a new function. This is great if you need to perform a number of actions on the same dataset. Let’s take our earlier examples of `sqrtAll` and `sum`. If we want to get the total of the sqrt of each item in an array we could write:
 
 ```javascript
 var squareRoots = sqrtAll([9, 64]);
@@ -185,7 +185,7 @@ function displayError() {
 }
 ```
 
-Obviously the displayError and displaySuccess functions are very similar and need to be refactored. Now we’ll use curry to tidy things up a bit:
+Obviously the `displayError` and `displaySuccess` functions are very similar and need to be refactored. Now we’ll use curry to tidy things up a bit:
 
 ```javascript
 startLoadingSpinner();
@@ -203,7 +203,7 @@ function requestComplete(message) {
 
 ### Event Stream
 
-In this scenario we have a list of events containing a type (create, edit, delete) and a date (yyyy-mm-dd). We want to role up all the events of the same type on the same day into a single event.
+In this scenario we have a list of events containing a type (create, edit, delete) and a date (yyyy-mm-dd). We want to roll up all the events of the same type on the same day into a single event.
 
 We can make a composite key of the date and type to remove duplicates.
 
