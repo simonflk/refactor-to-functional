@@ -163,7 +163,7 @@ All the examples so far have been fairly artificial to keep them short and to th
 
 ### jQuery Callbacks
 
-jQuery ajax requests take have callbacks for error and success handling. Quite often the we will want to provide some UI feedback based on the request result. Let’s say we want to display a dialog box with either an error message or a success message we could write it like this:
+jQuery ajax requests have callbacks for error and success handling. Quite often the we will want to provide some UI feedback based on the request result. Let’s say we want to display a dialog box with either an error message or a success message we could write it like this:
 
 ```javascript
 // let’s start a loading icon 
